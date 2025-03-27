@@ -92,8 +92,8 @@
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
   }
 
   ::-webkit-scrollbar-track {
@@ -111,11 +111,11 @@
   }
   
   .dashboard-card {
-    @apply glass-card p-4 animate-fade-in hover:border-primary/30 transition-all duration-300;
+    @apply glass-card p-1 animate-fade-in hover:border-primary/30 transition-all duration-300;
   }
   
   .nav-link {
-    @apply flex items-center gap-2 px-3 py-2 text-sm rounded-md transition-colors hover:bg-secondary focus:bg-secondary;
+    @apply flex items-center gap-1 px-2 py-1 text-xs rounded-md transition-colors hover:bg-secondary focus:bg-secondary;
   }
   
   .nav-link.active {
@@ -123,15 +123,15 @@
   }
   
   .stat-value {
-    @apply text-xl font-bold;
+    @apply text-base font-bold;
   }
   
   .stat-label {
-    @apply text-xs text-muted-foreground uppercase tracking-wider;
+    @apply text-[10px] text-muted-foreground uppercase tracking-wider;
   }
   
   .status-badge {
-    @apply px-2 py-0.5 rounded-full text-xs font-medium flex items-center gap-1;
+    @apply px-1 py-0.5 rounded-full text-[10px] font-medium flex items-center gap-1;
   }
   
   .status-badge.success {
