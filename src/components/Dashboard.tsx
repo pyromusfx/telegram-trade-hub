@@ -15,7 +15,7 @@ import {
   AlertCircle 
 } from "lucide-react";
 import { generateMockTrades, generateMockSignals, OrderSide, SignalStatus } from "@/utils/types";
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid } from "recharts";
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, BarChart, Bar, CartesianGrid, Cell } from "recharts";
 
 const Dashboard: React.FC = () => {
   const trades = generateMockTrades();
@@ -177,10 +177,17 @@ const Dashboard: React.FC = () => {
                 <Bar 
                   dataKey="profit" 
                   name="Kar/Zarar"
-                  fill={(data) => data.profit >= 0 ? "hsl(var(--signal-success))" : "hsl(var(--signal-danger))"}
+                  fill="transparent"
                   radius={[4, 4, 0, 0]}
                   maxBarSize={6}
-                />
+                >
+                  {chartData.map((entry, index) => (
+                    <Cell 
+                      key={`cell-${index}`} 
+                      fill={entry.profit >= 0 ? "hsl(var(--signal-success))" : "hsl(var(--signal-danger))"}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
